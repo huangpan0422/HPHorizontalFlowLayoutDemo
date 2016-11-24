@@ -15,6 +15,9 @@
 		1584D9471DE6F07000474DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1584D9451DE6F07000474DFE /* LaunchScreen.storyboard */; };
 		1584D9521DE6F07000474DFE /* HPHorizontalFlowLayoutDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1584D9511DE6F07000474DFE /* HPHorizontalFlowLayoutDemoTests.m */; };
 		1584D95D1DE6F07000474DFE /* HPHorizontalFlowLayoutDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1584D95C1DE6F07000474DFE /* HPHorizontalFlowLayoutDemoUITests.m */; };
+		1584D96C1DE6F08400474DFE /* ZWChangePreferencesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1584D96B1DE6F08400474DFE /* ZWChangePreferencesCell.m */; };
+		1584D9701DE6F08A00474DFE /* SMPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1584D96F1DE6F08A00474DFE /* SMPageControl.m */; };
+		1584D9741DE6F09500474DFE /* HPHorizontalScrollFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1584D9731DE6F09500474DFE /* HPHorizontalScrollFlowLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		1584D9581DE6F07000474DFE /* HPHorizontalFlowLayoutDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HPHorizontalFlowLayoutDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1584D95C1DE6F07000474DFE /* HPHorizontalFlowLayoutDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HPHorizontalFlowLayoutDemoUITests.m; sourceTree = "<group>"; };
 		1584D95E1DE6F07000474DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1584D96A1DE6F08400474DFE /* ZWChangePreferencesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWChangePreferencesCell.h; sourceTree = "<group>"; };
+		1584D96B1DE6F08400474DFE /* ZWChangePreferencesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWChangePreferencesCell.m; sourceTree = "<group>"; };
+		1584D96E1DE6F08A00474DFE /* SMPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMPageControl.h; sourceTree = "<group>"; };
+		1584D96F1DE6F08A00474DFE /* SMPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMPageControl.m; sourceTree = "<group>"; };
+		1584D9721DE6F09500474DFE /* HPHorizontalScrollFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HPHorizontalScrollFlowLayout.h; sourceTree = "<group>"; };
+		1584D9731DE6F09500474DFE /* HPHorizontalScrollFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HPHorizontalScrollFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,10 @@
 				1584D93B1DE6F07000474DFE /* AppDelegate.m */,
 				1584D93D1DE6F07000474DFE /* ViewController.h */,
 				1584D93E1DE6F07000474DFE /* ViewController.m */,
+				1584D96A1DE6F08400474DFE /* ZWChangePreferencesCell.h */,
+				1584D96B1DE6F08400474DFE /* ZWChangePreferencesCell.m */,
+				1584D9711DE6F09500474DFE /* HPFlowLayout */,
+				1584D96D1DE6F08A00474DFE /* SMPageControl */,
 				1584D9401DE6F07000474DFE /* Main.storyboard */,
 				1584D9431DE6F07000474DFE /* Assets.xcassets */,
 				1584D9451DE6F07000474DFE /* LaunchScreen.storyboard */,
@@ -138,6 +151,24 @@
 				1584D95E1DE6F07000474DFE /* Info.plist */,
 			);
 			path = HPHorizontalFlowLayoutDemoUITests;
+			sourceTree = "<group>";
+		};
+		1584D96D1DE6F08A00474DFE /* SMPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				1584D96E1DE6F08A00474DFE /* SMPageControl.h */,
+				1584D96F1DE6F08A00474DFE /* SMPageControl.m */,
+			);
+			path = SMPageControl;
+			sourceTree = "<group>";
+		};
+		1584D9711DE6F09500474DFE /* HPFlowLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1584D9721DE6F09500474DFE /* HPHorizontalScrollFlowLayout.h */,
+				1584D9731DE6F09500474DFE /* HPHorizontalScrollFlowLayout.m */,
+			);
+			path = HPFlowLayout;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,8 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1584D93F1DE6F07000474DFE /* ViewController.m in Sources */,
+				1584D96C1DE6F08400474DFE /* ZWChangePreferencesCell.m in Sources */,
 				1584D93C1DE6F07000474DFE /* AppDelegate.m in Sources */,
 				1584D9391DE6F07000474DFE /* main.m in Sources */,
+				1584D9741DE6F09500474DFE /* HPHorizontalScrollFlowLayout.m in Sources */,
+				1584D9701DE6F08A00474DFE /* SMPageControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
