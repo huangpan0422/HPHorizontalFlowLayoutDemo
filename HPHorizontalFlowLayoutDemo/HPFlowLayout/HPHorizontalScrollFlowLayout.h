@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+UIKIT_EXTERN NSUInteger numberOfPages(NSUInteger itemsInPage, NSUInteger totalCount);
 
 /**
  水平方向滑动与布局（暂时只考虑一个section的情形，后期再完善）

@@ -8,9 +8,13 @@
 
 #import "HPHorizontalScrollFlowLayout.h"
 
+UIKIT_EXTERN NSUInteger numberOfPages(NSUInteger itemsInPage, NSUInteger totalCount) {
+    if (totalCount == 0) return 0;
+    return (totalCount > itemsInPage) ? ((totalCount - 1) / itemsInPage + 1) : 1;
+}
 
 @interface HPHorizontalScrollFlowLayout () {
-    CGFloat _curContentWidth; // ContentSize.Width
+    NSUInteger _numberOfPages;
 }
 @property (nonatomic, strong) NSMutableArray<UICollectionViewLayoutAttributes*> *itemsAttributes;
 @end
@@ -29,7 +33,7 @@
     // 初始化数据
     _numberOfItemsInPage = 0;
     _columnsInPage = 0;
-    _curContentWidth = 0;
+    _numberOfPages = 0;
     _pageInset = UIEdgeInsetsZero;
     _itemsAttributes = [NSMutableArray array];
 }
@@ -44,6 +48,7 @@
     }
     // 布局
     NSUInteger numbers = [self.collectionView numberOfItemsInSection:0];
+    _numberOfPages = numberOfPages(self.numberOfItemsInPage, numbers);
     for (NSInteger i=0; i < numbers; i++) {
         [self.itemsAttributes addObject:[self layoutAttributesForItemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]]];
     }
@@ -66,15 +71,10 @@
     // 调整attributes（大小不变，位置改变）
     CGRect rect = attributes.frame;
     attributes.frame = CGRectMake(self.collectionView.bounds.size.width * curPage + self.pageInset.left + curColumn * self.itemSize.width + curColumn * self.minimumLineSpacing,  self.pageInset.top + curRow * self.itemSize.height + curRow * self.minimumInteritemSpacing, rect.size.width, rect.size.height);
-    // 内容的宽度
-    CGFloat curContentWidth = CGRectGetMaxX(attributes.frame) + self.pageInset.right;
-    if ( _curContentWidth < curContentWidth) {
-        _curContentWidth = curContentWidth;
-    }
     return attributes;
 }
 
 - (CGSize)collectionViewContentSize {
-    return CGSizeMake(_curContentWidth , [super collectionViewContentSize].height);
+    return CGSizeMake(self.collectionView.bounds.size.width * _numberOfPages, [super collectionViewContentSize].height);
 }
 @end
